@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kei's Portfolio</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background-color: #c7d9eb;
+      color: #333;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px;
+    }
+
+    .main-container {
+      position: relative;
+      background-image: url('https://i.pinimg.com/736x/c7/bb/66/c7bb664e44f9d7b6b47d0115d26e2517.jpg');
+      background-size: cover;
+      background-position: center;
+      width: 100%;
+      max-width: 1000px;
+      border-radius: 20px;
+      box-shadow: 0 4px 25px rgba(0, 0, 0, 0.2);
+      padding: 40px;
+      min-height: 600px;
+      overflow: hidden;
+    }
+
+    .navbar {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+    }
+
+    .navbar ul {
+      display: flex;
+      gap: 20px;
+      list-style: none;
+    }
+
+    .navbar a {
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+      transition: 0.3s;
+      text-shadow: 1px 1px 5px rgba(0,0,0,0.5);
+      cursor: pointer;
+    }
+
+    .navbar a:hover {
+      color: #cfd8ff;
+    }
+
+    section {
+      display: none;
+      animation: slideUp 0.6s ease;
+    }
+
+    section.active {
+      display: block;
+    }
+
+    @keyframes slideUp {
+      from {
+        transform: translateY(50px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    .hero-text {
+      text-align: center;
+      margin-top: 50px;
+    }
+
+    .hero-text h1 {
+      font-size: 2.6rem;
+      color: #fff;
+      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+    }
+
+    .hero-text span {
+      background-color: #5a6da3;
+      padding: 5px 10px;
+      border-radius: 10px;
+      color: white;
+    }
+
+    .intro-box {
+      background-color: rgba(255, 255, 255, 0.85);
+      border-radius: 20px;
+      padding: 25px;
+      margin: 40px auto 0;
+      width: 80%;
+      max-width: 700px;
+      box-shadow: 0 4px 25px rgba(0, 0, 0, 0.15);
+    }
+
+    .intro-box p {
+      text-align: justify;
+      font-size: 1.1rem;
+      line-height: 1.6;
+      color: #333;
+    }
+    
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+      justify-items: center;
+    }
+
+    .project-grid img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+
+    .project-grid a:hover img {
+      transform: scale(1.05);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+    }
+
+    @media (max-width: 768px) {
+      .project-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 480px) {
+      .project-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    .about-container {
+  text-align: center;
+  margin-top: 20px; /* kasih space biar gak nabrak navbar */
+  margin-bottom: 40px;
+}
+
+.profile-pic-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 5px;
+}
+
+.profile-pic {
+  width: 180px;
+  height: auto;
+  border-radius: 20px; /* sudut melengkung, tapi tetap bentuk kotak */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  margin-bottom: 5px;
+}
+
+.profile-pic:hover {
+  transform: scale(1.05);
+}
+
+  </style>
+</head>
+<body>
+  <div class="main-container">
+    <nav class="navbar">
+      <ul>
+        <li><a data-target="home">Home</a></li>
+        <li><a data-target="about">About</a></li>
+        <li><a data-target="projects">Projects</a></li>
+        <li><a data-target="contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home" class="active">
+      <div class="hero-text">
+        <h1>Welcome To<br><span>KEI'S PORTFOLIO</span></h1>
+      </div>
+      <div class="intro-box">
+        <p>
+          Hello! I'm Kayla, an Information Systems undergraduate student at UPN "Veteran" Jawa Timur 2025. I'm passionate to exploring the world of design, code, and creativity.  
+          This is my creativity, my canvas, my digital world.
+        </p>
+      </div>
+    </section>
+
+<!-- About Section -->
+<section id="about">
+  <div class="about-container">
+    <div class="profile-pic-wrapper">
+      <img src="https://i.imgur.com/IDmn2tT.png" 
+           alt="Kayla's photo" 
+           class="profile-pic">
+    </div>
+    <div class="hero-text">
+      <h1><span>ABOUT ME</span></h1>
+    </div>
+    <div class="intro-box">
+      <p>
+        I'm currently diving into UI/UX design, frontend development, and building creative projects with purpose and personality...
+      </p>
+    </div>
+  </div>
+</section>
+
+
+    <!-- Projects Section -->
+    <section id="projects">
+      <div class="hero-text">
+        <h1><span>MY PROJECTS</span></h1>
+      </div>
+      <div class="intro-box" style="margin-top: 40px;">
+        <h2 style="text-align: center; margin-bottom: 25px;">AnabulKu UI</h2>
+        <div class="project-grid">
+          <a href="https://imgur.com/4GSS5WB" target="_blank"><img src="https://i.imgur.com/4GSS5WB.jpg" alt="AnabulKu 1"></a>
+          <a href="https://imgur.com/MpCZ62H" target="_blank"><img src="https://i.imgur.com/MpCZ62H.jpg" alt="AnabulKu 2"></a>
+          <a href="https://imgur.com/UEZ4aWO" target="_blank"><img src="https://i.imgur.com/UEZ4aWO.jpg" alt="AnabulKu 3"></a>
+          <a href="https://imgur.com/mOsPvNw" target="_blank"><img src="https://i.imgur.com/mOsPvNw.jpg" alt="AnabulKu 4"></a>
+          <a href="https://imgur.com/qXqXwce" target="_blank"><img src="https://i.imgur.com/qXqXwce.jpg" alt="AnabulKu 5"></a>
+          <a href="https://imgur.com/nA2Qidl" target="_blank"><img src="https://i.imgur.com/nA2Qidl.jpg" alt="AnabulKu 6"></a>
+        </div>
+         <p style="text-align: center; margin-bottom: 30px;">
+     <a href="https://www.figma.com/proto/p41adtNDJVxUb4sc7pOb5M/AnabulKu-UI?node-id=303-2673&p=f&t=CLXhI9C8b9P1l03U-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=303%3A2673" 
+          target="_blank" 
+          style="color: #5a6da3; font-weight: bold; text-decoration: none;">
+          View full prototype on Figma
+    </a>
+  </p>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+      <div class="hero-text">
+        <h1><span>CONTACT</span></h1>
+      </div>
+      <div class="intro-box">
+        <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/kayla-lovina-rofin/" target="_blank">Kayla Lovina Rofin</a></p>
+        <p><strong>Instagram:</strong> <a href="https://www.instagram.com/kayikei/" target="_blank">@kayikei</a></p>
+        <p><strong>Email:</strong> <a href="mailto:kaylalovina0707@gmail.com">kaylalovina0707@gmail.com</a></p>
+        <p><strong>WhatsApp:</strong> <a href="https://wa.me/6289687731882" target="_blank">+62 896-8773-1882</a></p>
+      </div>
+    </section>
+  </div>
+
+  <script>
+    const navLinks = document.querySelectorAll('.navbar a');
+    const sections = document.querySelectorAll('section');
+
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        const targetId = link.getAttribute('data-target');
+
+        sections.forEach(sec => {
+          sec.classList.remove('active');
+        });
+
+        const targetSection = document.getElementById(targetId);
+        if (targetSection) {
+          targetSection.classList.add('active');
+        }
+      });
+    });
+  </script>
+</body>
+</html>
+
+
